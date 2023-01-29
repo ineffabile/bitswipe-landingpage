@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Noopla Regular";
+    src: URL("/fonts/NooplaRegular.ttf") format("truetype");
+}
+
+/* Custom CSS */
+
+body {
+    overflow-x: hidden;
+}
+
+/* Anchor Tag Underline Animation */
+.link-underline, .link-underline-part {
+    border-bottom-width: 0;
+    background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
+    background-size: 0 2px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 500ms ease-in-out;
+}
+
+.link-underline-black {
+    background-image: linear-gradient(transparent, transparent), linear-gradient(#E4B4BC, #E4B4BC)
+}
+
+.link-underline:hover {
+    background-size: 100% 2px;
+    background-position: 0 100%
+}
+
+.link-underline-part:hover {
+    background-size: 80% 2px;
+    background-position: 0 100%;
+}
+
+/* Cards Animations */
+.easeInAnimation {
+    animation: easeInAnimation 1250ms ease-in;
+}
+
+@keyframes easeInAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.cardsDivAnimation {
+    animation: cardsDivAnimation 1s ease-in-out;
+}
+
+@keyframes cardsDivAnimation {
+    from {
+        transform: scale(5);
+        filter: none;
+        z-index: 50;
+    }
+    to {
+        transform: scale(1);
+        filter: drop-shadow(0 15px 35px rgba(228,180,188,0.25));
+    }
+}
+
+.firstCardAnimation {
+    animation: firstCardAnimation 1050ms ease-in;
+}
+
+@keyframes firstCardAnimation {
+    from {
+        transform: translate(3rem, -6rem);
+    }
+    to {
+        transform: translate(3rem, 0);
+    }
+}
+
+.secondCardAnimation {
+    animation: secondCardAnimation 1050ms ease-in;
+}
+
+@keyframes secondCardAnimation {
+    from {
+        transform: translate(-2rem, 0) rotate(0) scale(1);
+    }
+    to {
+        transform: translate(-5rem, 0) rotate(12deg) scale(0.9);
+    }
+}
+
+.globeAnimation {
+    animation: globeAnimation 5s infinite;
+}
+
+@keyframes globeAnimation {
+    from {
+        filter: drop-shadow(0 0 10px rgba(250,37,54,0.25));
+    }
+    50% {
+        filter: drop-shadow(0 0 20px rgba(250,37,54,0.5));
+    }
+    to {
+        filter: drop-shadow(0 0 10px rgba(250,37,54,0.25));
+    }
+}
